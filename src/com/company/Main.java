@@ -3,6 +3,8 @@ package com.company;
 import java.util.Scanner;
 
 import static com.company.Displaying.*;
+import static com.company.ConversationManager.*;
+import static com.company.HelpingMethods.*;
 
 public class Main {
 
@@ -13,8 +15,9 @@ public class Main {
     }
 
     private static void talking() {
-        say(welcoming());
+        say(welcoming() + "\n");
         menuRepeating();
+        say(goodbye());
     }
 
     private static void menuRepeating() {
@@ -33,7 +36,7 @@ public class Main {
 
         switch (takeOptionsFromUser()) {
             case 1:
-                say("Wybrano opje nr 1. Porozmawiajmy");
+                converse();
                 break;
             default:
                 ifEndProgram = true;
